@@ -16,16 +16,21 @@
 
 <body>
     <!-- Nav Bar-->
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal">Movie Watchlist</h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="/">Search Movies</a>
+            <% if (user) { %>
+                <a class="p-2 text-dark" href="/watchlist">My Movies</a>
+                <a class="p-2 text-dark" href="/logout">Logout</a>
+                <% } %>
+        </nav>
+        <% if (!user) { %>
+            <a class="btn btn-outline-primary mr-md-2" href="/login">Login</a>
+            <a class="btn btn-outline-primary" href="/signup">Sign up</a>
+            <% } %>
+    </div>
+
 
 </body>
 
