@@ -30,7 +30,7 @@ app.use(cookieParser());
 
 //Sessions-Express
 app.use(session({
-    secret: process.env.SECERT_URL,
+    secret: process.env.SECERT_KEY,
     resave: false,
     saveUninitialized: true
 }));
