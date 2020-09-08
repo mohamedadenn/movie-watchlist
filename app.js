@@ -6,6 +6,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
+const MongoStore = require('connect-mongo')(session);
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
@@ -32,7 +33,8 @@ app.use(cookieParser());
 app.use(session({
     secret: process.env.SECERT_KEY,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new MongoStore({ url: process.env.DATABASE_URL }),
 }));
 
 //Passport

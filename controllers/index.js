@@ -6,7 +6,7 @@ module.exports = {
 
 
 function index(req, res, next) {
-    console.log(req.query)
+    console.log(req.user)
 
     res.render('index', {
         user: req.user,
