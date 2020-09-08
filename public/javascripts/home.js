@@ -63,9 +63,9 @@ function createMovieElement(movie) {
 // returns the inner HTML for a movie element
 function movieCardHTML(movie) {
     return `
-    <div class="card-image">
-    <img class="card-img-top" src="${movie.img}" alt=${movie.title}>
-   </div>
+   
+    <img src="${movie.img}" alt=${movie.title}>
+
    <div class="card-content">
           <p> <span class="card-title">${movie.title}</span></p>
         </div>
