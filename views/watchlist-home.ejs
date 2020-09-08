@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movie Watchlist</title>
+    <!-- Google Icon Fonts used by Materialize -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS Framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <!-- JavaScript for Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+    <script defer src="/javascripts/watchlist.js"></script>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+        <div class="container px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">My Movie Watchlist</h1>
+            <!-- list out movies -->
+
+            <section id="movies-list">
+                <% myMovies.forEach(movie => { %>
+                    <div class="card m-1 " id="movie-<%=movie._id %>">
+                        <img src="<%= movie.img %>" class="card-img-top" alt="<%= movie.title %>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= movie.title %>
+                            </h5>
+                            <button data-id="<%= movie._id %>" class="btn btn-danger">Remove</button>
+                        </div>
+                    </div>
+                    <% }) %>
+            </section>
+        </div>
+</body>
+
+</html>

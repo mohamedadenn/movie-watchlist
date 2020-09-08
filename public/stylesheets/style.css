@@ -1,0 +1,12 @@
+#movies-list {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.card-content {
+    text-align: center;
+    font-weight: bold;
+}

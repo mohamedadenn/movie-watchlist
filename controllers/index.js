@@ -4,13 +4,12 @@ module.exports = {
     index
 };
 
-
 function index(req, res, next) {
     console.log(req.user)
 
     res.render('index', {
         user: req.user,
-        title: 'test'
+        title: 'Movie WatchList'
     });
 
 };
