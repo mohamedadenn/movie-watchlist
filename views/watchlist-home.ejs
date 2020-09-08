@@ -15,8 +15,8 @@
 </head>
 
 <body>
-    <%- include('partials/navbar') %>
-        <div class="container px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <%- include('partials/navbar') %>n
+        <div>
             <h1 class="display-4">My Movie Watchlist</h1>
             <!-- list out movies -->
 
@@ -24,11 +24,10 @@
                 <% myMovies.forEach(movie => { %>
                     <div class="card m-1 " id="movie-<%=movie._id %>">
                         <img src="<%= movie.img %>" class="card-img-top" alt="<%= movie.title %>">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%= movie.title %>
-                            </h5>
-                            <button data-id="<%= movie._id %>" class="btn btn-danger">Remove</button>
+
+                        <div class="card-content">
+                            <p> <span class="card-title"><%= movie.title %></span></p>
+                            <div class="card-action"><button data-id="<%= movie._id %>" class="btn btn-danger">Remove</button></div>
                         </div>
                     </div>
                     <% }) %>

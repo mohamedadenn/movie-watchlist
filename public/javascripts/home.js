@@ -55,7 +55,7 @@ function init() {
 
 function createMovieElement(movie) {
     let el = document.createElement('div');
-    el.classList.add('col', "s12", "m9");
+    el.classList.add('card', "m1");
     el.innerHTML = movieCardHTML(movie);
     movieElementsDb[movie.imdbID] = el;
 }
@@ -63,9 +63,8 @@ function createMovieElement(movie) {
 // returns the inner HTML for a movie element
 function movieCardHTML(movie) {
     return `
-    <div class="card">
     <div class="card-image">
-    <img src="${movie.img}" alt=${movie.title}>
+    <img class="card-img-top" src="${movie.img}" alt=${movie.title}>
    </div>
    <div class="card-content">
           <p> <span class="card-title">${movie.title}</span></p>
@@ -77,7 +76,7 @@ function movieCardHTML(movie) {
           ? '<div class="card-action"> <p>Already in your watch list!</p>'
           : `<div class="card-action"> <button data-imdb-id="${movie.imdbID}" class="btn btn-primary">Add to List</button>`
       }
-    </div></div>`;
+    </div>`;
 }
 
 function renderMovieEl(movie) {
