@@ -17,5 +17,5 @@ function create(req, res, next) {
 function deleteOne(req, res, next) {
     MyMovie.findOneAndRemove({ _id: req.params.id, user: req.user })
         .then((removedMovie) => res.json(removedMovie._id))
-        .catch((err) => next(err));
+        .catch((err) => next(er));
 }
